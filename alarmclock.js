@@ -1,3 +1,32 @@
+// function updateClock ( )
+// {
+//   var currentTime = new Date ( );
+//   var currentHours = currentTime.getHours ( );
+//   var currentMinutes = currentTime.getMinutes ( );
+//   var currentSeconds = currentTime.getSeconds ( );
+//   var alarmTime = "070000"
+//   // Pad the minutes and seconds with leading zeros, if required
+//   currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+//   currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+
+//   // Choose either "AM" or "PM" as appropriate
+//   var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+
+//   // Convert the hours component to 12-hour format if needed
+//   currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+
+//   // Convert an hours component of "0" to "12"
+//   currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+
+//   // Compose the string for display
+//   var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+//   var rawTime = currentHours + currentMinutes + currentSeconds
+//   // Update the time display
+//   document.getElementById("clock").firstChild.nodeValue = currentTimeString;
+
+// }
+  
+// <body onload="updateClock(); setInterval('updateClock()', 1000 )"> runs updates clock every second. 
 
 function init ( )
 {
@@ -5,63 +34,35 @@ function init ( )
   document.getElementById("clock").appendChild ( timeDisplay );
 }
 
-function updateClock ( )
-{
-  var currentTime = new Date ( );
-
-  var currentHours = currentTime.getHours ( );
-  var currentMinutes = currentTime.getMinutes ( );
-  var currentSeconds = currentTime.getSeconds ( );
-
-  // Pad the minutes and seconds with leading zeros, if required
-  currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
-  currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
-
-  // Choose either "AM" or "PM" as appropriate
-  var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
-
-  // Convert the hours component to 12-hour format if needed
-  currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
-
-  // Convert an hours component of "0" to "12"
-  currentHours = ( currentHours == 0 ) ? 12 : currentHours;
-
-  // Compose the string for display
-  var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
-  
-  // Update the time display
-  document.getElementById("clock").firstChild.nodeValue = currentTimeString;
-
+var enableDisable = function(){
+  var hour = 7
+  var currentTime = new Date ();
+  var currentHour = currentTime.getHours(); 
+  if ( hour == currentHour){
+    document.getElementById("check_in").disabled = false;
+    document.getElementById("check_in").style.display = 'block';
+  }
+  else
+  {
+    document.getElementById("check_in").disabled = true;
+    document.getElementById("check_in").style.display = 'none';  
+  }
 }
+setInterval(enableDisable, 1000);
+enableDisable()
 
-// <body onload="updateClock(); setInterval('updateClock()', 1000 )"> runs updates clock every second. 
 
-var playSound = false
 
-var alarmTime = "700"
-
-var alarm = function(){
-  playSound = true
-};
-var currentHours = currentTime.getHours ( );
-var currentMinutes = currentTime.getMinutes ( );
-var currentSeconds = currentTime.getSeconds ( );
-var rawTime = currentHours + currentMinutes + currentSeconds
 
 var time_elapsed = 0
 var checkinTimer = function(time_elapsed){
   time_elapsed++;
   console.log(time_elapsed)
 }
-
 var stop_timer = function(){
-  document.getElementById('stop_timer').addEventListener('click')
+  document.getElementById('check_in').addEventListener('click')
 }
 
-if ( alarmTime == currentTimeString )
-{
-  alarm()
-}
 var time = 0
 var updateTimer = function(){
 
