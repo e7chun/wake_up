@@ -19,7 +19,7 @@ html {
 }
 .whole_page {
 	background-size: 100% auto;
-	opacity: 20;
+/*	opacity: 20;*/
 }
 
 ul{
@@ -109,5 +109,24 @@ a {
 #count_down {
 	margin: 10px 100px;
 	font-size: 100px;
+}
+
+.input {
+	width: 300px;
+	height: 50px;
+}
+
+input {
+	background-color: white;
+	color: grey;
+}
+
+#registers {
+	font-size: 50px;
+}
+
+#hidden {
+
+	visibility: hidden;
 }
 
