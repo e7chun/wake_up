@@ -28,19 +28,23 @@
   
 // <body onload="updateClock(); setInterval('updateClock()', 1000 )"> runs updates clock every second. 
 
-function init ( )
-{
-  timeDisplay = document.createTextNode ( "" );
-  document.getElementById("clock").appendChild ( timeDisplay );
+// timer starts when alarm starts
+// button appears when alarm starts 
+//checkin to GTFU -> on click says STFU -> 
+window.onload = function() {
+    document.getElementById('check_in').addEventListener('click', function() {
+    document.getElementById('check_in').innerHTML = "<h1>STAY THE FUCK UP</h1>"
+    setInterval(enableDisable, 1000); // checks enableDisable
+    enableDisable()
+    })
 }
 
 var enableDisable = function(){
-  var hour = 7
-  var currentTime = new Date ();
-  var currentHour = currentTime.getHours(); 
+  var hour = 12
+  var currentHour = 12
   if ( hour == currentHour){
-    document.getElementById("check_in").disabled = false;
-    document.getElementById("check_in").style.display = 'block';
+    document.getElementById('check_in').disabled = true;
+    document.getElementById('check_in').style.display = 'none';
   }
   else
   {
@@ -48,11 +52,9 @@ var enableDisable = function(){
     document.getElementById("check_in").style.display = 'none';  
   }
 }
-setInterval(enableDisable, 1000);
-enableDisable()
-
-
-
+window. onload = function() { 
+  }
+// enable disables a button or somethn  i could do some inline crap to make it do something else.. i guess?
 
 var time_elapsed = 0
 var checkinTimer = function(time_elapsed){
