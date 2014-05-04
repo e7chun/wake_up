@@ -63,7 +63,7 @@ a {
 	padding: 20px;
 	padding-left: -20px;
 	padding-right: -20px;
-	margin:30px 250px;
+	margin:10px 250px;
 }
 
 #end {
@@ -73,7 +73,8 @@ a {
 	padding: 20px;
 	padding-left: -20px;
 	padding-right: -20px;
-	margin:180px 250px;
+	margin:30px 250px 2px 250px;
+	visibility: hidden;
 }
 
 #start:hover {
@@ -98,5 +99,15 @@ a {
 
 #memo {
 	font-size: 40px;
+}
+
+#clock {
+	margin: 10px 100px;
+	font-size: 50px;
+}
+
+#count_down {
+	margin: 10px 100px;
+	font-size: 100px;
 }
 

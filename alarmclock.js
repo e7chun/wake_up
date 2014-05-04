@@ -3,12 +3,12 @@
 window.onload = function() {
     // document.getElementById('count_down').style.visiblity = 'hidden'
     document.getElementById('start').addEventListener('click', function() {
-    document.getElementById('start').innerHTML = "STAY THE F*CK UP"
+    document.getElementById('start').innerHTML = "STAY AWAKE"
     setInterval(im_still_awake, 1000)
     // im_still_awake();
     document.getElementById('count_down').style.visbility = 'visible'
+    displayTimeLeft();
     setInterval(displayTimeLeft, 1000)
-    // displayTimeLeft();
     })
     setInterval(enableDisable, 1000); // checks enableDisable
     enableDisable()
@@ -54,7 +54,7 @@ var enableDisable = function(){
   if ( time_left == 0 ){
     document.getElementById('end').style.visibility = 'visible';
     document.getElementById('end').addEventListener('click', function() {
-        document.getElementById('end').innerHTML = "gratz!"
+        document.getElementById('end').innerHTML = "GOOD. NOW GET THE F*CK OUT OF BED"
     })
   }
   else
